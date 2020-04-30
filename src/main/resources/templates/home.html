@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout}">
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="py-5 text-center">
+            <h2>Hello [[${#httpServletRequest.remoteUser}]]</h2>
+            <p class="lead">Welcome to TODO List Application developed using Spring Boot, Spring Security, Spring Data JPA with Hibernate, Thymeleaf and Bootstrap.</p>
+            <p>Click <a th:href="@{/tasks}">here</a> to start.</p>
+        </div>
+    </div>
+</body>
+</html>
