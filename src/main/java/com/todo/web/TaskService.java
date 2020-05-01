@@ -13,20 +13,21 @@ public class TaskService {
     public TaskService() {
     }
 
-    public void save(TaskDto task) {
+    public void save(Long userId, TaskDto task) {
 
     }
 
-    public void updateStatus(Long taskId) {
+    public void updateStatus(Long userId, Long taskId) {
 
     }
 
-    public void remove(Long taskId) {
+    public void remove(Long userId, Long taskId) {
 
     }
 
-    public List<TaskDto> find() {
+    public List<TaskDto> find(Long userId) {
         TaskDto taskDto = new TaskDto();
+        taskDto.setId(userId);
         taskDto.setDescription("Task description");
         taskDto.setDone(false);
         taskDto.setLastUpdate(LocalDateTime.now());

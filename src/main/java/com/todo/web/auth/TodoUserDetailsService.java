@@ -23,4 +23,12 @@ public class TodoUserDetailsService implements UserDetailsService {
         }
         return new TodoUserPrincipal(user);
     }
+
+    public Long getUserIdByUsername(String username) throws UsernameNotFoundException {
+        User user = this.userRepository.findByUsername(username);
+        if(null == user){
+            throw new UsernameNotFoundException("cannot find username: " + username);
+        }
+        return user.getId();
+    }
 }

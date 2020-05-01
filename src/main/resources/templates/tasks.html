@@ -7,7 +7,7 @@
 <body>
     <div layout:fragment="content">
         <div class="col-md-9 text-left">
-            <form class="needs-validation" novalidate method="post" th:object="${taskForm}" th:action="@{/registration}">
+            <form class="needs-validation" novalidate method="post" th:object="${taskForm}" th:action="@{/tasks}">
                 <div class="row">
                     <div class="col-md-9 mb-3">
                         <input type="text" class="form-control" id="description" th:placeholder="#{form.task.description}" value="" required
@@ -38,8 +38,8 @@
                                    th:text="${#temporals.format(task.lastUpdate,'dd MMM yyyy')}">
                             </small>
                         </p>
-                        <a href="#"  class="btn btn-outline-danger">Remove</a>
-                        <a href="#" class="btn btn-primary">Done</a>
+                        <a th:href="@{/tasks/{id}(id = ${task.id})}"  class="btn btn-outline-danger">Remove</a>
+                        <a th:href="@{/tasks/status/{id}(id = ${task.id})}" class="btn btn-primary">Done</a>
                     </div>
                 </div>
             </th:block>

@@ -50,11 +50,4 @@ public class SpringWebApplicationTests {
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrlPattern("**/login"));
     }
-
-    @Test
-    @WithMockUser
-    public void accessSecuredResourceAuthenticatedThenOk() throws Exception {
-        mockMvc.perform(get("/tasks"))
-                .andExpect(status().isOk());
-    }
 }
