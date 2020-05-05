@@ -5,8 +5,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders.FormLoginRequestBuilder;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -26,14 +26,14 @@ public class SpringWebApplicationTests {
 
     @Test
     public void loginWithValidUserThenAuthenticated() throws Exception {
-        FormLoginRequestBuilder login = formLogin().user("user1").password("password");
+        FormLoginRequestBuilder login = formLogin().user("userTest1").password("password");
         mockMvc.perform(login)
-                .andExpect(authenticated().withUsername("user1"));
+                .andExpect(authenticated().withUsername("userTest1"));
     }
 
     @Test
     public void loginWithInvalidUserThenUnauthenticated() throws Exception {
-        FormLoginRequestBuilder login = formLogin().user("invalid").password("invalidPassword");
+        FormLoginRequestBuilder login = formLogin().user("invalidUser").password("invalidPassword");
         mockMvc.perform(login)
                 .andExpect(unauthenticated());
     }
