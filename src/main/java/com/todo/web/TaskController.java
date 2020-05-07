@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -39,28 +38,27 @@ public class TaskController {
             TaskDto taskDto = new TaskDto();
             taskDto.setDescription(form.getDescription());
             taskService.save(userId, taskDto);
-            model.addAttribute(FORM, new TaskForm());
+
+            return "redirect:/" + this.getTaskList(model, userId);
         }
-        List<TaskDto> taskList = taskService.find(userId);
-        model.addAttribute(TASKS, taskList);
 
         return TASKS;
     }
 
-    @DeleteMapping("tasks/{id}")
+    @RequestMapping("/tasks/{id}")
     public String removeTask(Model model, Authentication authentication, @PathVariable final Long id) {
         Long userId = this.userDetailsService.getCurrentUserId(authentication.getName());
         taskService.remove(userId, id);
 
-        return getTaskList(model, userId);
+        return "redirect:/" + this.getTaskList(model, userId);
     }
 
-    @PutMapping("tasks/{id}/status")
+    @RequestMapping("/tasks/{id}/status")
     public String updateTaskStatus(Model model, Authentication authentication, @PathVariable final Long id) {
         Long userId = this.userDetailsService.getCurrentUserId(authentication.getName());
         taskService.updateStatus(userId, id);
 
-        return this.getTaskList(model, userId);
+        return "redirect:/" + this.getTaskList(model, userId);
     }
 
     private String getTaskList(Model model, final Long userId) {
