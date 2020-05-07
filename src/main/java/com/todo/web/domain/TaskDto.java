@@ -8,6 +8,6 @@ import java.time.LocalDateTime;
 public class TaskDto {
     private Long id;
     private String description;
-    private Boolean done;
+    private Boolean checked;
     private LocalDateTime lastUpdate;
 }

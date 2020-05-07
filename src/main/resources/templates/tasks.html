@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout}">
 <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <title><span th:text="#{application.name}"></span></title>
 </head>
 <body>
@@ -19,7 +20,7 @@
 
                     <div class="col-md-3 mb-3">
                         <button class="btn btn-primary" type="submit">
-                            <span th:text="#{form.task.submit}"></span>
+                            <span th:text="#{form.task.submit}">Add task</span>
                         </button>
                     </div>
                 </div>
@@ -32,14 +33,20 @@
             <th:block th:each="task : ${tasks}">
                 <div class="card">
                     <div class="card-body">
-                        <p class="card-text" th:text="${task.description}"></p>
                         <p class="card-text">
+                            <span th:text="${task.description}"></span>
+                            <br>
                             <small class="text-muted"
                                    th:text="${#temporals.format(task.lastUpdate,'dd MMM yyyy')}">
                             </small>
                         </p>
-                        <a th:href="@{/tasks/{id}(id = ${task.id})}"  class="btn btn-outline-danger">Remove</a>
-                        <a th:href="@{/tasks/status/{id}(id = ${task.id})}" class="btn btn-primary">Done</a>
+                        <a th:href="@{/tasks/{id}(id = ${task.id})}" class="btn btn-outline-danger">
+                            <span class="fas fa-trash"></span>
+                        </a>
+                        <a th:href="@{/tasks/{id}/status(id = ${task.id})}"
+                           th:classappend="${task.checked} ? 'btn btn-primary active' : 'btn btn-light'">
+                            <span class="fas fa-check"></span>
+                        </a>
                     </div>
                 </div>
             </th:block>
