@@ -30,23 +30,25 @@
         <hr class="mb-4">
 
         <div class="card-columns">
-            <th:block th:each="task : ${tasks}">
+            <th:block th:each="task : ${tasks}" th:if="${tasks != null}">
                 <div class="card">
                     <div class="card-body">
                         <p class="card-text">
                             <span th:text="${task.description}"></span>
                             <br>
-                            <small class="text-muted"
+                            <small class="text-muted" th:if="${task.lastUpdate != null}"
                                    th:text="${#temporals.format(task.lastUpdate,'dd MMM yyyy')}">
                             </small>
                         </p>
-                        <a th:href="@{/tasks/{id}(id = ${task.id})}" class="btn btn-outline-danger">
-                            <span class="fas fa-trash"></span>
-                        </a>
-                        <a th:href="@{/tasks/{id}/status(id = ${task.id})}"
-                           th:classappend="${task.checked} ? 'btn btn-primary active' : 'btn btn-light'">
-                            <span class="fas fa-check"></span>
-                        </a>
+                        <th:block th:if="${task.id != null}">
+                            <a th:href="@{/tasks/{id}(id = ${task.id})}" class="btn btn-outline-danger">
+                                <span class="fas fa-trash"></span>
+                            </a>
+                            <a th:href="@{/tasks/{id}/status(id = ${task.id})}"
+                               th:classappend="${task.checked} ? 'btn btn-primary active' : 'btn btn-light'">
+                                <span class="fas fa-check"></span>
+                            </a>
+                        </th:block>
                     </div>
                 </div>
             </th:block>
