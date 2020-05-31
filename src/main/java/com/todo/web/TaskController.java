@@ -9,7 +9,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @Controller
 public class TaskController {
@@ -63,7 +62,7 @@ public class TaskController {
 
     private String getTaskList(Model model, final Long userId) {
         model.addAttribute(FORM, new TaskForm());
-        List<TaskDto> taskList = this.taskService.find(userId);
+        TaskDto[] taskList = this.taskService.find(userId);
         model.addAttribute(TASKS, taskList);
         return TASKS;
     }
