@@ -1,14 +1,19 @@
 # TODO list Spring Web
 
-Spring Web application that secures the app with a login form leveraging JDBC Authentication and bcrypt for hashing
+Spring Web application with a login form leveraging JDBC Authentication and bcrypt for hashing
 
-## What you'll need
-Java 1.8
+Check it out at: https://todo-spring-web.herokuapp.com/
 
-Maven 3.0+
+Features
+- [ ] Add tasks
+- [ ] Check/Uncheck tasks
+- [ ] Delete tasks
 
-## Instructions
-Import the project from GitHub
+## Getting the code on your computer
+- [ ] Java 1.8
+- [ ] Maven 3.0+
+- [ ] Import the project from GitHub: https://github.com/diogo-santos/todo-spring-web
+- [ ] Import backend projeck from GitHub: https://github.com/diogo-santos/task-spring-api and follow the instructions there
 
 Run the app
 ```
@@ -19,6 +24,10 @@ mvn spring-boot:run
 ## Test the App
 Now the website is running, visit http://localhost:8080, the landing page displays a welcome message
 
-Login/Password: user/password
+Login/Password: 
+- [ ] user1/password
+- [ ] user2/password
+- [ ] user3/password
+- [ ] user4/password
 
 ![]()
