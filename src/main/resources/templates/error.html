@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout}">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout}">
 <head>
     <title>Error</title>
 </head>
 <body>
-<br>
-<div class="container">
-    <div class="page-header">
-        Error
+<div layout:fragment="content">
+    <div class="pb-2 mt-4 mb-2 border-bottom">
+        <h3>Error</h3>
     </div>
     <p>An error occurred while trying to access the requested resource</p>
 </div>
