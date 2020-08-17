@@ -1,13 +1,19 @@
-# TODO list Spring Web
-
-Spring Web application with a login form leveraging JDBC Authentication and bcrypt for hashing
+# TODO list Spring Boot Web
+- [ ] Spring Security using JDBC and Bcrypt for hashing, Spring MVC and JPA with Hibernate
+- [ ] Asynchronous calls to back-end Task API 
+- [ ] Internationalization using Spring Locale Resolver
+- [ ] Bootstrap 4 for cool presentation and responsive behavior
+- [ ] JQuery for front end validation
 
 Check it out at: https://todo-spring-web.herokuapp.com/
 
 Features
+- [ ] Login form
 - [ ] Add tasks
 - [ ] Check/Uncheck tasks
 - [ ] Delete tasks
+- [ ] Resources protected for each user
+- [ ] Change the language
 
 ## Getting the code on your computer
 - [ ] Java 1.8
@@ -29,5 +35,3 @@ Login/Password:
 - [ ] user2/password
 - [ ] user3/password
 - [ ] user4/password
-
-![]()
