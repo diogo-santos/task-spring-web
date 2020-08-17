@@ -1,4 +1,4 @@
-# TODO list Spring Boot Web
+# TODO List - Spring Boot Web
 - [ ] Spring Security using JDBC and Bcrypt for hashing, Spring MVC and JPA with Hibernate
 - [ ] Asynchronous calls to back-end Task API 
 - [ ] Internationalization using Spring Locale Resolver
