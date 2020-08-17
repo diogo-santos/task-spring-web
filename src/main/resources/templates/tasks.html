@@ -7,27 +7,25 @@
 </head>
 <body>
     <div layout:fragment="content">
-        <div class="col-md-9 text-left">
+        <div>
             <form class="needs-validation" novalidate method="post" th:object="${taskForm}" th:action="@{/tasks}">
                 <div class="row">
                     <div class="col-md-9 mb-3">
-                        <input type="text" class="form-control" id="description" th:placeholder="#{form.task.description}" value="" required
+                        <input type="text" class="form-control" id="description" th:placeholder="#{task.description}" value="" required
                                th:field="*{description}" th:classappend="${#fields.hasErrors('description')} ? 'is-invalid'">
                         <div class="invalid-feedback">
-                            <span th:text="#{form.task.description.required}"></span>
+                            <span th:text="#{task.description.required}"></span>
                         </div>
                     </div>
 
                     <div class="col-md-3 mb-3">
                         <button class="btn btn-primary" type="submit">
-                            <span th:text="#{form.task.submit}">Add task</span>
+                            <span th:text="#{task.submit}">Add task</span>
                         </button>
                     </div>
                 </div>
             </form>
         </div>
-
-        <hr class="mb-4">
 
         <div class="card-columns">
             <th:block th:each="task : ${tasks}" th:if="${tasks != null}">

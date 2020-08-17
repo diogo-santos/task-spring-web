@@ -11,14 +11,33 @@
         <div class="collapse navbar-collapse" id="navbarDemo">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item" th:classappend="${module == 'home'?'active':''}">
-                    <a class="nav-link" href="#" th:href="@{/home}">Home</a>
+                    <a class="nav-link" href="#" th:href="@{/home}" th:text="#{home.title}">Home</a>
                 </li>
                 <li class="nav-item" th:classappend="${module == 'registration'?'active':''}">
-                    <a class="nav-link" href="#" th:href="@{/tasks}">Tasks</a>
+                    <a class="nav-link" href="#" th:href="@{/tasks}" th:text="#{task.title}">Tasks</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn btn-link nav-link dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                            <span th:text="#{lang.change}">...</span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" th:href="@{${#httpServletRequest.requestURI}(lang=en)}"
+                               th:text="#{lang.en}">...</a>
+                            <a class="dropdown-item" th:href="@{${#httpServletRequest.requestURI}(lang=it)}"
+                               th:text="#{lang.it}">...</a>
+                            <a class="dropdown-item" th:href="@{${#httpServletRequest.requestURI}(lang=pt)}"
+                               th:text="#{lang.pt}">...</a>
+                        </div>
+                    </div>
                 </li>
             </ul>
             <form class="form-inline my-2 my-md-0" method="post" th:action="@{/logout}">
-                <input class="btn btn-link nav-link p-0 text-left" type="submit" sec:authorize="isAuthenticated()" value="Logout">
+                <input class="btn btn-link nav-link p-0 text-left" type="submit"
+                       sec:authorize="isAuthenticated()" th:value="#{navBar.logout}">
             </form>
         </div>
     </nav>

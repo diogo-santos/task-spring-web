@@ -24,13 +24,13 @@ public class TaskController {
         this.userDetailsService = userDetailsService;
     }
 
-    @GetMapping(TASKS)
+    @GetMapping("/tasks")
     public String getTaskList(Model model, Authentication authentication) {
         Long userId = this.userDetailsService.getCurrentUserId(authentication.getName());
         return this.getTaskList(model, userId);
     }
 
-    @PostMapping(TASKS)
+    @PostMapping("/tasks")
     public String addTask(Model model, Authentication authentication, @Valid TaskForm form, BindingResult result) {
         Long userId = this.userDetailsService.getCurrentUserId(authentication.getName());
         if (!result.hasErrors()) {
@@ -40,7 +40,6 @@ public class TaskController {
 
             return "redirect:/" + this.getTaskList(model, userId);
         }
-
         return TASKS;
     }
 

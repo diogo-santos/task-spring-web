@@ -2,15 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout}">
 <head>
-    <title>Home</title>
+    <title th:text="#{home.title}">...</title>
 </head>
 <body>
-    <div layout:fragment="content">
-        <div class="py-5 text-center">
-            <h2>Hello [[${#httpServletRequest.remoteUser}]]</h2>
-            <p class="lead">Welcome to TODO List Application developed using Spring Boot, Spring Security, Spring Data JPA with Hibernate, Thymeleaf and Bootstrap.</p>
-            <p>Click <a th:href="@{/tasks}">here</a> to start.</p>
-        </div>
+<div layout:fragment="content">
+    <div class="py-5 text-center">
+        <h2><span th:text="#{home.greeting}"> </span> [[${#httpServletRequest.remoteUser}]]</h2>
+        <p class="lead" th:text="#{home.welcome}">...</p>
+        <p>
+            <a th:href="@{/tasks}" th:text="#{home.start}">...</a>
+        </p>
     </div>
+</div>
 </body>
 </html>
