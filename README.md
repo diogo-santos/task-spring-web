@@ -1,13 +1,9 @@
-# TODO List - Spring Boot Web
-Check it out at: https://todo-spring-web.herokuapp.com/
-
+# Task List - Spring Boot Web
 - [ ] Spring Security using JDBC and Bcrypt for hashing, Spring MVC and JPA with Hibernate
 - [ ] Asynchronous calls to back-end Task API 
 - [ ] Internationalization using Spring Locale Resolver
 - [ ] Bootstrap 4 for cool presentation and responsive behavior
 - [ ] JQuery for front end validation
-
-
 
 Features
 - [ ] Login form
@@ -25,7 +21,7 @@ Features
 
 Run the app
 ```
-cd todo-spring-web
+cd task-spring-web
 mvn spring-boot:run
 ```
 
