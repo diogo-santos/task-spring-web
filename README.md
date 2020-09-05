@@ -16,7 +16,7 @@ Features
 ## Getting the code on your computer
 - [ ] Java 1.8
 - [ ] Maven 3.0+
-- [ ] Import the project from GitHub: https://github.com/diogo-santos/todo-spring-web
+- [ ] Import the project from GitHub: https://github.com/diogo-santos/task-spring-web
 - [ ] Import backend project from GitHub: https://github.com/diogo-santos/task-spring-api and follow the instructions there
 
 Run the app

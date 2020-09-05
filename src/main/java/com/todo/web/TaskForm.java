@@ -9,6 +9,6 @@ import java.io.Serializable;
 @Data
 class TaskForm implements Serializable {
     @NotEmpty
-    @Size(max = 50)
+    @Size(max = 20)
     private String description;
 }
