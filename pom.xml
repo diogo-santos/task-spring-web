@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example.securing.web</groupId>
-    <artifactId>todo-spring-web</artifactId>
+    <artifactId>task-spring-web</artifactId>
     <version>1.0.0</version>
 
     <parent>
